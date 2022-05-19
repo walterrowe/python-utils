@@ -25,7 +25,7 @@ class myClass:
     def print(self):
         if isinstance(self,list):
             for mine in self:
-                print (f"First: {mine.first}, Last: {mine.last}")
+                mine.print
         else:
             print (f"First: {self.first}, Last: {self.last}")
 
