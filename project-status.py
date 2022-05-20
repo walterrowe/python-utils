@@ -3,6 +3,7 @@
 
 from datetime import *
 
+# Issue class used for testing
 class Issue():
     def __init__(self, title, labels, closed):
         self.title = title
@@ -25,29 +26,23 @@ class Issue():
         else:
             print (f'Title: {self.title}, Closed: {self.closed}, Labels: {self.labels}')
 
-issues = []
-# issues_list = [
-#     { "title": "issue1", "labels": [ 'Overdue' ], "closed": today - timedelta(10) },
-#     { "title": "issue2", "labels": [ ], "closed": date.today() + timedelta(10) },
-#     { "title": "issue3", "labels": [ ], "closed": date.today() + timedelta(3) },
-#     { "title": "issue4", "labels": [ ], "closed": date.today() - timedelta(7) }
-# ]
 
+# relative dates for report
 today = date.today()
 thirty_last = today - timedelta(30)
 thirty_next = today + timedelta(30)
 
+# sample issues to test against
+issues = []
 issues = issues + [ Issue(title="issue1", closed=(today-timedelta(10)), labels=[ 'Overdue' ] ) ]
 issues = issues + [ Issue(title="issue2", closed=(today+timedelta(10)), labels=[] ) ]
 issues = issues + [ Issue(title="issue3", closed=(today+timedelta(3)) , labels=[] ) ]
 issues = issues + [ Issue(title="issue4", closed=(today-timedelta(7)) , labels=[] ) ]
 
-last = []
-next = []
-late = []
-
-report = []
-
+# build report collections
+last = []       # closed last 30 days
+next = []       # due in next 30 days
+late = []       # issues that are overdue
 for issue in issues:
     if issue.closed > thirty_last and issue.closed < today:
         last.append(issue)
@@ -56,6 +51,8 @@ for issue in issues:
     if 'Overdue' in issue.labels:
         late.append(issue)
 
+# create report lines
+report = []     # report output lines
 report.append('# %(project)s Status Report for %(date)s\n' %
     { "project": 'Automated Server Provisioning', "date": today })
 
@@ -83,6 +80,8 @@ if len(late) > 0:
 else:
     report.append('\n- No overdue tasks')
 
+
+# write report file
 report_name = 'status-' + today.strftime('%Y-%m-%d') + '.md'
 report_file = open(report_name,'w')
 report_file.writelines(report)
