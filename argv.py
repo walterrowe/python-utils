@@ -31,6 +31,10 @@ class parse:
     '''
 
     def __init__(self, argv=None, *allowed):
+        '''
+        Parse sys.argv command line via:
+            args = argv.parse(sys.argv [, 'option1[=exclusive]', ..., 'optionN' ])
+        '''
         self.argv = argv                # preserve original argv
         self.allowed = []               # preserve allowed args
         self.exclusive = []             # list of exclusive args
@@ -87,12 +91,21 @@ class parse:
         return f'{self.options}'
 
     def get(self, key):
+        '''
+        Get the value of a key via
+            value = args.options[key]
+            value = args.get(key)
+
+        '''
         if key in self.options.keys():
             return self.options[key]
         else:
             return None
 
     def show(self):
+        '''
+        Show the values of an argv object
+        '''
         print(f'command: ', *self.argv)
         print(f'passed: ', self.passed)
         print(f'allowed: ', *self.allowed)
