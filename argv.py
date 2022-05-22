@@ -1,6 +1,6 @@
 ##
 ## module: argv
-## class: parse
+## class: Parse
 ##
 ## date: 2022-05-21
 ## auth: walter rowe <walter.rowe@nist.gov>
