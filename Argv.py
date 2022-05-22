@@ -6,7 +6,7 @@
 ## auth: walter rowe <walter.rowe@nist.gov>
 ##
 
-class parse:
+class Parse:
     '''
 
     This class parses sys.argv arguments into a key-value dictionary

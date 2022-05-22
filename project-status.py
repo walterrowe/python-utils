@@ -3,7 +3,7 @@
 # https://www.online-python.com
 
 from datetime import *
-import Issue
+import issue
 
 # relative dates for report
 today = date.today()
@@ -12,10 +12,10 @@ thirty_next = today + timedelta(30)
 
 # sample issues to test against
 issues = []
-issues = issues + [ Issue.Issue(title="issue1", closed=(today-timedelta(10)), labels=[ 'Overdue' ] ) ]
-issues = issues + [ Issue.Issue(title="issue2", closed=(today+timedelta(10)), labels=[] ) ]
-issues = issues + [ Issue.Issue(title="issue3", closed=(today+timedelta(3)) , labels=[] ) ]
-issues = issues + [ Issue.Issue(title="issue4", closed=(today-timedelta(7)) , labels=[] ) ]
+issues = issues + [ issue.Issue(title="issue1", closed=(today-timedelta(10)), labels=[ 'Overdue' ] ) ]
+issues = issues + [ issue.Issue(title="issue2", closed=(today+timedelta(10)), labels=[] ) ]
+issues = issues + [ issue.Issue(title="issue3", closed=(today+timedelta(3)) , labels=[] ) ]
+issues = issues + [ issue.Issue(title="issue4", closed=(today-timedelta(7)) , labels=[] ) ]
 
 # build report collections
 last = []       # closed last 30 days
