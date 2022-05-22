@@ -3,7 +3,7 @@
 # https://www.online-python.com
 
 from datetime import *
-import issue
+import Issue
 
 # relative dates for report
 today = date.today()
