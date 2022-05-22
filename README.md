@@ -1,5 +1,7 @@
 # Markup Mermaid Diagrams
 
+This is some text followed by a diagram.
+
 ```mermaid
 graph LR
 
