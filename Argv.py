@@ -22,7 +22,7 @@ class Parse:
     All other command line arguments are ignored
 
     Parse the command line arguments via:
-        args = argv.parse(sys.argv [, 'option1[=exclusive]', ..., 'optionN' ])
+        args = argv.Parse(sys.argv [, 'option1[=exclusive]', ..., 'optionN' ])
 
     Get the value of a key via
         value = args.options[key]
@@ -33,7 +33,7 @@ class Parse:
     def __init__(self, argv=None, *allowed):
         '''
         Parse sys.argv command line via:
-            args = argv.parse(sys.argv [, 'option1[=exclusive]', ..., 'optionN' ])
+            args = argv.Parse(sys.argv [, 'option1[=exclusive]', ..., 'optionN' ])
         '''
         self.argv = argv                # preserve original argv
         self.allowed = []               # preserve allowed args
