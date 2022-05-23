@@ -64,12 +64,7 @@ class Parse:
                     if ',' in val:
                         val = list(val.split(','))
                     if allowed == None or key in self.options.keys():
-                        if isinstance(val,list):
-                            for this_val in val:
-                                self.options[key].append(this_val)
-                        else:
-                            self.options[key].append(val)
-                        # build a list of options seen
+                        self.options[key] = self.options[key] + (val if isinstance(val,list) else list(val))
                         if key not in seen:
                             seen.append(key)
                 else:
