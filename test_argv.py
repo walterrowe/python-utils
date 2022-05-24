@@ -1,6 +1,6 @@
 #! /usr/local/bin/python3
 """
-test_argv.py [ --help ] [ --group=group[,group...] ] [ --project=project[,project...] ] [ --commit ]
+%(script)s [ --help ] [ --group=group[,group...] ] [ --project=project[,project...] ] [ --commit ]
 
 parameters:
     --help: prints this usage message
@@ -16,9 +16,9 @@ parameters:
 import sys
 import argv
 
-args = argv.Parse(sys.argv, 'help', 'group=exclusive', 'project=exclusive', 'config', 'commit')
-if args.passed != True or args.get('help') == True:
-    print(__doc__)
+options = argv.Parse(sys.argv, 'help', 'group=exclusive', 'project=exclusive', 'config', 'commit')
+if options.passed != True or options.get('help') == True:
+    print(__doc__ % { "script" : sys.argv[0].split('/')[-1] } )
     exit()
 
 print(args)
