@@ -21,9 +21,3 @@ parser.add_argument('--commit', dest='commit', help='tells the script to make th
 options = parser.parse_args()
 
 print(options)
-# print(options.group)
-# print(options.project)
-# print(options.section)
-# print(options.label)
-# print(options.color)
-# print(options.commit)
