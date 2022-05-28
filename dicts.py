@@ -22,14 +22,14 @@ else:
 
 # could also use 'for size in sizes.keys():'
 for size in sizes:
-    print ("Machine size(s) entered: {}".format(size))
+    print (f"Machine size(s) entered: {size}")
 
 # using ' '.join(list) creates a string with ' ' between each element in list
-print ("Machine size(s) entered: {}".format(','.join(sizes)))
+print (f"Machine size(s) entered: {','.join(sizes)}")
 
 # test dict.get()
 for size in sizes:
     if size in machines.keys():
-        print ("Machine Size {} has {} CPU(s) and {} GB RAM.".format(size,machines[size]['cpu'],machines[size]['ram']))
+        print (f"Machine Size {size} has {machines[size]['cpu']} CPU(s) and {machines[size]['ram']} GB RAM.")
     else:
-        print ("Invalid machine size.")
+        print (f"Invalid machine size {size}.")

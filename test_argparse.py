@@ -10,7 +10,7 @@ all of this will be included in the --help page via 'epilog=__doc__'
 import argparse
 
 parser = argparse.ArgumentParser(add_help=True, formatter_class=argparse.RawDescriptionHelpFormatter, epilog=__doc__)
-group = parser.add_mutually_exclusive_group()
+group = parser.add_mutually_exclusive_group(required=True)
 group.add_argument('--group', dest='group', type=str, help='list of one or more group paths or ids', nargs='+', action='extend')
 group.add_argument('--project', dest='project', type=str, help='list of one or more project paths or ids', nargs='+', action='extend')
 parser.add_argument('--label', dest='label', type=str, help='name of label to use for overdue items', default='Overdue')
