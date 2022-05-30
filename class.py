@@ -8,7 +8,7 @@ import sys      # system library
 import re       # regular expressions
 
 # play with a class
-class myClass:
+class Name:
     def __init__(self, first, last):
         self.first = first
         self.last = last
@@ -29,17 +29,17 @@ class myClass:
         else:
             print (f"First: {self.first}, Last: {self.last}")
 
-x = myClass('Walter','Rowe')
-y = myClass('Debbie','Rowe')
+x = Name('Walter','Rowe')
+y = Name('Debbie','Rowe')
 z = x + y
 
-print(repr(x))
-print(repr(z))
+# print(repr(x))
+# print(repr(z))
 
 print(f"my_class len = {len(z)}")
 print(x)
 print(y)
-myClass.print(z)
+Name.print(z)
 
 # some other tests
 my_tupl = (1, 3, 5, 7, 9)
